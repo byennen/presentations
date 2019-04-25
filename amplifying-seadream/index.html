@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/black.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1 style="font-size: 110px; margin-bottom: 0">
+            Amplifying SeaDream
+          </h1>
+          <h4>
+            Amplify, Gatsby, Apollo for Quickly Generating Serverless Apps
+          </h4>
+          <p>
+            by <a href="https://lengstorf.com/">Lance Ennen</a><br /><small
+              ><a href="https://twitter.com/byennen">@byennen</a>&nbsp; ·
+              &nbsp;<a href="mailto:lance@webandmobile.software"
+                >lance@webandmobile.software</a
+              ></small
+            >
+          </p>
+          <p>
+            <small
+              >Slides:
+              <a href="https://git.io/amplifying-seadream"
+                >git.io/amplifying-seadream</a
+              ></small
+            >
+          </p>
+        </section>
+        <section>
+          <blockquote class="photo-quote">
+            <div class="photo">
+              <img
+                src="./images/lance-ennen.png"
+                alt="Lance Ennen"
+                height="300px"
+              />
+            </div>
+            <div class="quote">
+              <ul style="list-style: none;">
+                <li>Software Consultant</li>
+                <li>Currently: SeaDream Yacht Club</li>
+                <li>Formerly: United Airlines</li>
+                <li>Miami, FL</li>
+              </ul>
+            </div>
+          </blockquote>
+        </section>
+        <section>
+          <h3>
+            You should use <em>Amplify</em> for quickly generating
+            <span class="fragment"> back end architechture </span>
+            <span class="fragment">
+              <em>and I'm going to show you how today</em>
+            </span>
+          </h3>
+        </section>
+        <section>
+          <h3>
+            Development today is<em style="display: block;font-size: 230%"
+              >different</em
+            >
+          </h3>
+        </section>
+        <section>
+          <h3>
+            Devops is
+            <strong style="display: block; font-size: 400%">dying</strong>
+          </h3>
+          <aside class="notes">
+            <ul>
+              <li>
+                I know there are still a lot of companies using monolithic CMSs
+              </li>
+              <li>The trend is clear though: most CMSs are going headless</li>
+              <li>WordPress, Drupal, Ghost — even Magento!</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>
+            The future is<em style="display: block; font-size: 121%"
+              >serverless</em
+            >
+          </h2>
+        </section>
+        <section>
+          <h2>
+            How this works in
+            <em style="display: block; font-size: 270%">Gatsby</em>
+          </h2>
+          <ul>
+            <li class="fragment">
+              Node APIs to load any data source into GraphQL
+            </li>
+            <li class="fragment">“Early bind” data at build time</li>
+            <li class="fragment">Generate static assets</li>
+            <li class="fragment">Automate performance tuning</li>
+            <li class="fragment">Deploy to a CDN (e.g. Amplify)</li>
+            <li class="fragment">React app in the browser</li>
+          </ul>
+          <aside class="notes">
+            <ul>
+              <li>PRPL, image optimization, Service Worker</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>
+            User Authentication with
+            <em style="display: block; font-size: 270%">aws cognito</em>
+          </h2>
+          <ul>
+            <li class="fragment">amplify add auth</li>
+            <li class="fragment">Setup User Pools</li>
+          </ul>
+        </section>
+        <section>
+          <h2>
+            Setup our API
+            <em style="display: block; font-size: 270%">aws appsync</em>
+          </h2>
+          <ul>
+            <li class="fragment">Sets up our GraphQL API</li>
+            <li class="fragment">Generates all Query's</li>
+            <li class="fragment">Generates all Mutations</li>
+            <li class="fragment">Sets up subscriptions</li>
+            <li class="fragment">Creates the dynamodb tables</li>
+          </ul>
+        </section>
+        <section>
+          <h2>
+            Setup Search with
+            <em style="display: block; font-size: 270%">Elasticsearch</em>
+          </h2>
+          <ul>
+            <li class="fragment">@searchable on @model</li>
+            <li class="fragment">Elasticseach is auto generated</li>
+          </ul>
+        </section>
+        <section>
+          <h2>
+            Storage with <em style="display: block; font-size: 270%">S3</em>
+          </h2>
+          <ul>
+            <li class="fragment">amplify add storage</li>
+            <li class="fragment">Create a model for S3 objects</li>
+          </ul>
+        </section>
+        <section>
+          <h2>
+            Background processes with
+            <em style="display: block; font-size: 270%">Lambda</em>
+          </h2>
+          <ul>
+            <li class="fragment">payments with stripe and AWS Lambda</li>
+          </ul>
+        </section>
+        <section>
+          <h2>
+            Deploying multiple environments on
+            <em style="display: block; font-size: 270%">Amplify</em>
+          </h2>
+          <ul>
+            <li class="fragment">Demo Amplify</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/notes/notes.js", async: true },
+          { src: "plugin/highlight/highlight.js", async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>
